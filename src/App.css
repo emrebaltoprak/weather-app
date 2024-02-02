@@ -33,6 +33,7 @@ input {
   -moz-box-shadow: 0px 0px 28px 6px rgba(0, 0, 0, 0.32);
   box-shadow: 0px 0px 28px 6px rgba(0, 0, 0, 0.32);
 }
+
 body {
   background-image: url("/public/Assets/weatherAppWallpaper.jpg");
   background-size: cover;
@@ -72,4 +73,7 @@ h1 {
 .humidityTag {
   display: flex;
   justify-content: center;
+}
+#degreefont {
+  font-weight: bold;
 }

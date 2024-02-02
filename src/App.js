@@ -10,7 +10,9 @@ function App() {
     setInputValue(event.target.value);
   };
 
-  const [data, setData] = useState("ankara");
+  const [data, setData] = useState({
+    days: [],
+  });
 
   const handleButtonChange = () => {
     const apiKey = "V6AWZNVPM3LTHC8HK9GUNYAWJ";

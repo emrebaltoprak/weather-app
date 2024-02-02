@@ -1,8 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-
+import "../App.css";
 function Card(props) {
   let iconSrc;
+  const [daysName, setDaysName] = useState(props.cardTitle);
+
+  const options = {
+    weekday: "long",
+    month: "long",
+    day: "numeric",
+  };
+
+  const turkishDateWithDay = new Date(daysName).toLocaleDateString(
+    "tr",
+    options
+  );
+  console.log(turkishDateWithDay);
+  // Örnek çıktı: "Cuma, 1 Şubat 2024"
 
   if (props.icons === "clear-day") {
     iconSrc = "Assets/sunny.png";
@@ -17,11 +31,13 @@ function Card(props) {
   }
 
   return (
-    <div className="card" style={{ width: 10 + "rem" }}>
+    <div className="card" style={{ width: 13 + "rem" }}>
       <div className="card-body">
-        <h5 className="card-title">{props.cardTitle} </h5>
+        <h5 className="card-title display-block">{turkishDateWithDay}</h5>
 
-        <p className="degree">{props.degree} °C</p>
+        <p id="degreefont" className="degree fw-bold">
+          {props.degree} °C
+        </p>
         <div className="imgfont">
           <img className="imgTag" src={iconSrc} alt="image" />
         </div>
